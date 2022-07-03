@@ -1,14 +1,12 @@
 import { useEffect, useState } from "react";
-import Card from "./components/Card";
-import Circle from "./components/Circle";
+import CardHolder from "./components/CardHolder";
 import Header from "./components/Header";
 
-import { numberToPrecentage }  from './miscellaneous/util'
-// import { useSpring, animated } from 'react-spring'
+
 function App() {
-  
-  const [counter , setConuter] = useState(0)
-  const [questions , setQuestions] = useState([])
+
+  const [questions, setQuestions] = useState([])
+
   
   useEffect(() => {
     fetchQuestions()
@@ -22,12 +20,6 @@ function App() {
     setQuestions(data)
     
   }
-
-  // const fetchQuestions =  () => {
-  // axios()
-  // }
-
-  const [displayPercentage, setdisplayPercentage] = useState(false)
   
   return (
     <div className="w-screen h-screen  flex justify-center    " >
@@ -35,27 +27,11 @@ function App() {
         <Header />
         {
           questions.length>0 ?
-            <div className="px-7  display flex w-full md:flex-row flex-col items-center">
-              <Card
-                color="green"
-                option={questions[counter].option1}
-                precentage={numberToPrecentage(questions[counter].vote1, questions[counter].vote2)[0]}
-                displayPercentage={displayPercentage}
-                setdisplayPercentage={setdisplayPercentage}
-              />
-              <Circle />
-              <Card
-                color="red"
-                option={questions[counter].option2}
-                precentage={numberToPrecentage(questions[counter].vote1, questions[counter].vote2)[1]}
-                displayPercentage={displayPercentage}
-                setdisplayPercentage={setdisplayPercentage}
-              />
+            <div className="">
+              <CardHolder questions={questions}/>
             </div>:""
         
         }
-       
-
       </div>
     </div>
   );
