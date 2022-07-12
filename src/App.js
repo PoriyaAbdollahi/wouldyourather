@@ -1,16 +1,24 @@
 import { useEffect, useState } from "react";
 import CardHolder from "./components/CardHolder";
+import Footer from "./components/Footer";
 import Header from "./components/Header";
-
-
+import loadingPATH from './animation/loading.json';
+import Lottie from 'react-lottie';
 function App() {
 
   const [questions, setQuestions] = useState([])
 
+  const chatAnimationConfig = {
+    loop: true,
+    autoplay: true,
+    animationData: loadingPATH,
+    rendererSettings: {
+      preserveAspectRatio: 'xMidYMid slice'
+    }
+  }
   
   useEffect(() => {
     fetchQuestions()
-   
   }, []);
 
   const fetchQuestions = async() => {
@@ -29,9 +37,14 @@ function App() {
           questions.length>0 ?
             <div className="">
               <CardHolder questions={questions}/>
-            </div>:""
+            </div> : <Lottie
+              height="200px"
+              width="200px"
+              options={chatAnimationConfig}
+            />  
         
         }
+        {/* <Footer/> */}
       </div>
     </div>
   );
