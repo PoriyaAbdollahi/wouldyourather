@@ -27,11 +27,17 @@ const Cards = ({ currentCards, setCurrentCards, questions, displayPercentage, se
 
 
   return (
-    <div className={` w-52 h-48 m-auto rounded-md   justify-center  md:w-64 md:h-56 text-white  px-7  display flex  md:flex-row flex-col items-center`} onClick={() => onCardClickHandler()}>
+    <div className={` w-52 h-48 m-auto rounded-md afsaneh  justify-center  md:w-64 md:h-56 text-white  px-7  display flex  md:flex-row flex-col items-center cursor-pointer `} onClick={() => onCardClickHandler()}>
       {currentCards.map((item) => (
-        <div key={left ? item.option1 : item.option2} style={{ backgroundColor:left?"green":"red", transform: `rotate(${left?item.deg1:item.deg2}deg) ` }} className={"w-52 h-48 rounded-md flex flex-col justify-center items-center absolute drop-shadow-lg"} >
-          <h2>{left?item.option1:item.option2}</h2>
-          <div className='text-2xl'>
+        <div
+          key={left ? item.option1 : item.option2}
+          style={{
+            backgroundColor: left ? "#53BF9D" : "#F94C66",
+            transform: `rotate(${left ? item.deg1 : item.deg2}deg) `
+          }}
+          className={"w-52 h-48 rounded-md flex flex-col justify-center items-center absolute drop-shadow-lg shadow-md md:text-3xl  "} >
+          <h2 dir='rtl' className='p-4 text-center '>{left?item.option1:item.option2}</h2>
+          <div title='درصد افرادی که رای دادند' className='text-2xl'>
             {displayPercentage ?
               <Perc
                 perc={left ? numberToPrecentage(currentCards[currentCards.length - 1].vote1, currentCards[currentCards.length - 1].vote2)[0] : numberToPrecentage(currentCards[currentCards.length - 1].vote1, currentCards[currentCards.length - 1].vote2)[1] }

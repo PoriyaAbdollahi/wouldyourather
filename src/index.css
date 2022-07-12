@@ -2,6 +2,30 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+    font-family: "kordi";
+    src: url(./font/kordi.ttf) format("truetype");
+    font-weight: bold;
+}
+@font-face {
+    font-family: "moj";
+    src: url(./font/moj.ttf) format("truetype");
+    font-weight: bold;
+}
+@font-face {
+    font-family: "afsaneh";
+    src: url(./font/afsaneh.ttf) format("truetype");
+    font-weight: bold;
+}
+.kordi{
+    font-family: "kordi";
+}
+.moj {
+    font-family: "moj";
+}
+.afsaneh {
+    font-family: "afsaneh";
+}
 body {
     background: -moz-linear-gradient(45deg, #02e1ba 0%, #26c9f2 29%, #d911f2 66%, #ffa079 100%);
     background: -webkit-linear-gradient(45deg, #02e1ba 0%, #26c9f2 29%, #d911f2 66%, #ffa079 100%);

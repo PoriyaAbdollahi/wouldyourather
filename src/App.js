@@ -14,7 +14,7 @@ function App() {
   }, []);
 
   const fetchQuestions = async() => {
-    const response = await fetch("http://localhost:3000/questions") 
+    const response = await fetch("https://wyrback.vercel.app") 
     const data = await response.json()
     console.log(data)
     setQuestions(data)
