@@ -42,9 +42,8 @@ function App() {
               width="200px"
               options={chatAnimationConfig}
             />  
-        
         }
-        {/* <Footer/> */}
+        <Footer/>
       </div>
     </div>
   );
