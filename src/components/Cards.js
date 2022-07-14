@@ -9,7 +9,10 @@ const Cards = ({ currentCards, setCurrentCards, questions, displayPercentage, se
   const onCardClickHandler = () => {
 
     if (displayPercentage) {
+      //this will update vote in db
+      updateOptionVote(left)
 
+      //this will change the current card
       setCurrentCards([...currentCards, {
         option1: questions[counter + 1].option1,
         option2: questions[counter + 1].option2,
@@ -24,6 +27,28 @@ const Cards = ({ currentCards, setCurrentCards, questions, displayPercentage, se
 
   }
 
+  const updateOptionVote = async (leftCard) => {
+   
+    var myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+
+    var raw = JSON.stringify({
+      "questionId": questions[counter]._id,
+      "vote1": leftCard,
+      "vote2": !leftCard
+    });
+
+    var requestOptions = {
+      method: 'PUT',
+      headers: myHeaders,
+      body: raw,
+      redirect: 'follow'
+    };
+
+    fetch("https://wyrback.vercel.app", requestOptions)
+      .then(response => response.text())
+      .catch(error => console.log('error', error));
+  }
 
 
   return (
