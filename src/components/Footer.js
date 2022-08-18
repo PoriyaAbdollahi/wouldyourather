@@ -5,8 +5,9 @@ import azarakhsh from "./../images/azarakhsh.jpg"
 import poriyaabdollahi from "./../images/poriyaabdollahi.png"
 const Footer = () => {
   return (
-      <footer className="relative h-1/6  mx-10 md:h-1/2">
-          <div style={{ bottom: "0", display: "block" }} className='absolute w-full  bg-Ayellow  p-4 rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800'>
+      <footer className="h-36  md:h-80   mx-10 ">
+          <div className='relative h-full  md:pt-3.5 mt-4'>
+          <div style={{  display: "block" }} className='absolute w-full bottom-0 bg-Ayellow  p-4 rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800'>
               <div className='flex w-full justify-between items-center flex-col md:flex-row md:items-stretch'>
                   <div className='flex '>
                       <Profile href="https://poriyaabdollahi.ir/" img={poriyaabdollahi} alt="وبسایت پوریا عبدالهی" />
@@ -16,6 +17,7 @@ const Footer = () => {
 
            </div>
               
+              </div>
           </div>
       </footer>
   )

@@ -60,9 +60,9 @@ const Cards = ({ currentCards, setCurrentCards, questions, displayPercentage, se
             backgroundColor: left ? "#53BF9D" : "#F94C66",
             transform: `rotate(${left ? item.deg1 : item.deg2}deg) `
           }}
-          className={"w-52 h-48 rounded-md flex flex-col justify-center items-center absolute drop-shadow-lg shadow-md md:text-3xl  "} >
-          <h2 dir='rtl' className='p-4 text-center '>{left?item.option1:item.option2}</h2>
-          <div title='درصد افرادی که رای دادند' className='text-2xl'>
+          className={"md:w-52 md:h-48 h-32 w-36 rounded-md flex flex-col justify-center items-center absolute drop-shadow-lg shadow-md md:text-3xl  "} >
+          <h2 dir='rtl' className='p-4 text-center md:text-3xl text-lg '>{left?item.option1:item.option2}</h2>
+          <div title='درصد افرادی که رای دادند' className='md:text-2xl text-lg'>
             {displayPercentage ?
               <Perc
                 perc={left ? numberToPrecentage(currentCards[currentCards.length - 1].vote1, currentCards[currentCards.length - 1].vote2)[0] : numberToPrecentage(currentCards[currentCards.length - 1].vote1, currentCards[currentCards.length - 1].vote2)[1] }

@@ -38,7 +38,8 @@ body {
     flex-direction: column;
     align-items: stretch;
     justify-content: space-evenly;
-    overflow: hidden;
+    
+    overflow-x: hidden;
     position: relative;
 }
 
@@ -192,4 +193,15 @@ body::after {
     opacity: 0.3;
     fill: #FFFFFF;
     enable-background: new;
+}
+body {
+    -ms-overflow-style: none;
+    /* Internet Explorer 10+ */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+body::-webkit-scrollbar {
+    display: none;
+    /* Safari and Chrome */
 }
